@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    compileSdkVersion core.compileSdkVersion
+    buildToolsVersion core.buildToolsVersion
+
+    defaultConfig {
+        applicationId "team.uptech.demo.huddle"
+
+        minSdkVersion core.minSdkVersion
+        targetSdkVersion core.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    api project(':huddle')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${libraries.kotlinVersion}"
+
+    /* Android */
+    implementation "androidx.constraintlayout:constraintlayout:${libraries.constraintLayoutVersion}"
+    implementation "androidx.annotation:annotation:${libraries.annotationVersion}"
+    implementation "androidx.core:core-ktx:${libraries.coreKtxVersion}"
+    implementation "com.google.android.material:material:${libraries.materialVersion}"
+    implementation "androidx.appcompat:appcompat:${libraries.appCompatVersion}"
+    implementation "androidx.recyclerview:recyclerview:${libraries.recyclerViewVersion}"
+
+    /* Tests */
+    testImplementation "junit:junit:${libraries.junitVersion}"
+    androidTestImplementation "androidx.test.ext:junit:${libraries.junitAndroidVersion}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${libraries.espressoCoreVersion}"
+}
