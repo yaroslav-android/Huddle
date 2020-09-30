@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 apply from: "$rootDir/dependencies.gradle"
-group = 'team.uptech.android'
+group = 'com.github.yaroslav-android'
 
 android {
     compileSdkVersion core.compileSdkVersion
