@@ -1,0 +1,9 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="Android XML code style notification" displayType="NONE" shouldLog="false" />
+    <notification groupId="Build sync orphan modules" displayType="NONE" shouldLog="false" />
+    <notification groupId="Gradle Notification Group" displayType="NONE" shouldLog="false" />
+    <notification groupId="IDE and Plugin Updates" />
+    <notification groupId="Kotlin plugin updates" />
+  </component>
+</application>

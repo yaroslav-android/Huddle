@@ -1,0 +1,255 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="CMakeSettings">
+        <configurations>
+          <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+        </configurations>
+      </component>
+      <component name="GradleLocalSettings">
+        <option name="projectSyncType">
+          <map>
+            <entry key="$USER_HOME$/Projects/Android/Aspiration" value="PREVIEW" />
+          </map>
+        </option>
+      </component>
+      <component name="InspectionProjectProfileManager">
+        <profile version="1.0">
+          <option name="myName" value="Project Default" />
+          <inspection_tool class="AbstractClassWithOnlyOneDirectInheritor" enabled="true" level="WARNING" enabled_by_default="true" />
+        </profile>
+        <version value="1.0" />
+      </component>
+      <component name="ProjectCodeStyleConfiguration">
+        <code_scheme name="Project" version="173">
+          <codeStyleSettings language="XML">
+            <indentOptions>
+              <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            </indentOptions>
+            <arrangement>
+              <rules>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>xmlns:android</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>^$</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>xmlns:.*</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>^$</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                    <order>BY_NAME</order>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>.*:id</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>.*:name</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>name</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>^$</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>style</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>^$</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>.*</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>^$</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                    <order>BY_NAME</order>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>.*</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                    <order>ANDROID_ATTRIBUTE_ORDER</order>
+                  </rule>
+                </section>
+                <section>
+                  <rule>
+                    <match>
+                      <AND>
+                        <NAME>.*</NAME>
+                        <XML_ATTRIBUTE />
+                        <XML_NAMESPACE>.*</XML_NAMESPACE>
+                      </AND>
+                    </match>
+                    <order>BY_NAME</order>
+                  </rule>
+                </section>
+              </rules>
+            </arrangement>
+          </codeStyleSettings>
+        </code_scheme>
+      </component>
+      <component name="ProjectInspectionProfilesVisibleTreeState">
+        <entry key="Project Default">
+          <profile-state>
+            <expanded-state>
+              <State>
+                <id />
+              </State>
+              <State>
+                <id>J2ME issuesJava</id>
+              </State>
+              <State>
+                <id>Java</id>
+              </State>
+            </expanded-state>
+            <selected-state>
+              <State>
+                <id>AbstractClassWithOnlyOneDirectInheritor</id>
+              </State>
+            </selected-state>
+          </profile-state>
+        </entry>
+      </component>
+      <component name="ProjectViewState">
+        <option name="abbreviatePackageNames" value="true" />
+        <option name="hideEmptyMiddlePackages" value="true" />
+        <option name="showExcludedFiles" value="true" />
+        <option name="showLibraryContents" value="true" />
+      </component>
+      <component name="PropertiesComponent">
+        <property name="android.project.structure.last.selected" value="SDK Location" />
+        <property name="android.project.structure.proportion" value="0.15" />
+        <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+        <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+      </component>
+      <component name="RunManager">
+        <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+          <option name="MAIN_CLASS_NAME" />
+          <option name="HTML_FILE_NAME" />
+          <option name="HTML_USED" value="false" />
+          <option name="WIDTH" value="400" />
+          <option name="HEIGHT" value="300" />
+          <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+          <option name="VM_PARAMETERS" />
+        </configuration>
+        <configuration default="true" type="JUnit" factoryName="JUnit">
+          <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+          <module name="" />
+          <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+          <option name="ALTERNATIVE_JRE_PATH" />
+          <option name="PACKAGE_NAME" />
+          <option name="MAIN_CLASS_NAME" />
+          <option name="METHOD_NAME" />
+          <option name="TEST_OBJECT" value="class" />
+          <option name="VM_PARAMETERS" value="-ea" />
+          <option name="PARAMETERS" />
+          <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+          <option name="ENV_VARIABLES" />
+          <option name="PASS_PARENT_ENVS" value="true" />
+          <option name="TEST_SEARCH_SCOPE">
+            <value defaultName="singleModule" />
+          </option>
+          <envs />
+          <patterns />
+          <method />
+        </configuration>
+        <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+          <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+        </configuration>
+        <configuration default="true" type="Application" factoryName="Application">
+          <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+          <method v="2">
+            <option name="Make" enabled="true" />
+          </method>
+        </configuration>
+        <configuration default="true" type="TestNG">
+          <option name="TEST_OBJECT" value="CLASS" />
+          <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+          <properties />
+          <listeners />
+          <method v="2">
+            <option name="Make" enabled="true" />
+          </method>
+        </configuration>
+      </component>
+      <component name="SvnConfiguration">
+        <configuration>$USER_HOME$/.subversion</configuration>
+      </component>
+      <component name="masterDetails">
+        <states>
+          <state key="ProjectJDKs.UI">
+            <settings>
+              <last-edited>1.8</last-edited>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+          <state key="ScopeChooserConfigurable.UI">
+            <settings>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+        </states>
+      </component>
+    </defaultProject>
+  </component>
+</application>

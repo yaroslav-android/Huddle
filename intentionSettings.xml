@@ -1,0 +1,16 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="Kotlin/Add explicit type arguments" />
+    <ignoreAction name="Kotlin/Convert function type parameter to receiver" />
+    <ignoreAction name="Kotlin/Convert function type receiver to parameter" />
+    <ignoreAction name="Kotlin/Remove explicit lambda parameter types (may break code)" />
+    <ignoreAction name="Kotlin/Remove explicit supertype qualification" />
+    <ignoreAction name="Kotlin/Remove explicit type arguments" />
+    <ignoreAction name="Kotlin/Remove explicit type specification" />
+    <ignoreAction name="Kotlin/Replace by reconstructed type" />
+    <ignoreAction name="Kotlin/Specify all types explicitly in destructuring declaration" />
+    <ignoreAction name="Kotlin/Specify explicit lambda signature" />
+    <ignoreAction name="Kotlin/Specify type explicitly" />
+    <ignoreAction name="Kotlin/Use destructuring declaration" />
+  </component>
+</application>

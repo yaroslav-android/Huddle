@@ -1,0 +1,22 @@
+<templateSet group="Kotlin">
+  <template name="visible" value="$VIEW$.visibility = View.VISIBLE" description="make view visible" toReformat="false" toShortenFQNames="true">
+    <variable name="VIEW" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="gone" value="$VIEW$.visibility = View.GONE" description="make view gone" toReformat="false" toShortenFQNames="true">
+    <variable name="VIEW" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="excom" value="/* ---------$SCRIPT$----------&#10;--------- $PARAM$ -----------&#10;---------$SCRIPT$---------- */" description="Generate extended comment" toReformat="true" toShortenFQNames="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SCRIPT" expression="groovyScript(&quot;def dashes= \&quot;\&quot;; _1.size().times {dashes+=\&quot;-\&quot;}; dashes&quot;, PARAM)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_EXPRESSION" value="true" />
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

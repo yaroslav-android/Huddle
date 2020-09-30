@@ -1,0 +1,23 @@
+<application>
+  <component name="CodeInsightSettings">
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <option name="INSERT_BRACE_ON_ENTER" value="false" />
+  </component>
+  <component name="DefaultFont">
+    <option name="FONT_SIZE" value="13" />
+    <option name="FONT_FAMILY" value="JetBrains Mono" />
+  </component>
+  <component name="EditorSettings">
+    <option name="languageBreadcrumbsMap">
+      <map>
+        <entry key="kotlin" value="true" />
+      </map>
+    </option>
+    <option name="USE_SOFT_WRAPS" value="" />
+  </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\btodo\b.*" />
+    <pattern pattern="\bfixme\b.*" />
+    <pattern icon="important" pattern="\brefactor\b.*" />
+  </component>
+</application>

@@ -1,0 +1,30 @@
+<keymap version="1" name="Mac OS X 10.5+ copy" parent="Mac OS X 10.5+">
+  <action id="ActivateAndroidProfilerToolWindow">
+    <keyboard-shortcut first-keystroke="meta 0" />
+  </action>
+  <action id="ActivateBuildVariantsToolWindow">
+    <keyboard-shortcut first-keystroke="meta 3" />
+  </action>
+  <action id="ActivateFindToolWindow" />
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="meta 8" />
+  </action>
+  <action id="EditorSelectLine">
+    <keyboard-shortcut first-keystroke="ctrl alt s" />
+  </action>
+  <action id="FileChooser.GotoModule" />
+  <action id="RebuildGradleProject">
+    <keyboard-shortcut first-keystroke="alt r" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt r" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl alt v" />
+  </action>
+  <action id="android.deploy.ApplyChanges">
+    <keyboard-shortcut first-keystroke="ctrl meta r" />
+  </action>
+  <action id="android.deploy.CodeSwap">
+    <keyboard-shortcut first-keystroke="shift ctrl meta r" />
+  </action>
+</keymap>

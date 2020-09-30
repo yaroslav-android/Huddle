@@ -1,0 +1,14 @@
+<templateSet group="Android">
+  <template name="yodo" value="// TODO: (Y.Ovdiienko) $cursor$" description="named todo" toReformat="false" toShortenFQNames="true">
+    <variable name="cursor" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="yodom" value="/* TODO: (Y.Ovdiienko) $cursor$ */" description="multiline named todo" toReformat="false" toShortenFQNames="true">
+    <variable name="cursor" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,22 @@
+<scheme name="_@user_Default" version="142" parent_scheme="Default">
+  <metaInfo>
+    <property name="created">2018-10-03T09:15:30</property>
+    <property name="ide">AndroidStudio</property>
+    <property name="ideVersion">3.2.0.26</property>
+    <property name="modified">2018-10-03T09:30:55</property>
+    <property name="originalScheme">Default</property>
+  </metaInfo>
+  <attributes>
+    <option name="LOGCAT_DEBUG_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="2196f3" />
+      </value>
+    </option>
+    <option name="TEXT">
+      <value>
+        <option name="FOREGROUND" value="0" />
+        <option name="BACKGROUND" value="ffffff" />
+      </value>
+    </option>
+  </attributes>
+</scheme>
