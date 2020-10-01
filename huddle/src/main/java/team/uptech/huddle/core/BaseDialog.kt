@@ -15,6 +15,7 @@ import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 import team.uptech.huddle.R
 import team.uptech.huddle.core.parameters.Parameters
+import team.uptech.huddle.model.CtaMode
 import team.uptech.huddle.util.extension.dp
 import team.uptech.huddle.util.extension.getThemeColor
 import team.uptech.huddle.util.extension.setWidthRelativeToParent
@@ -51,7 +52,7 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
       if (parameters.dialog.enableDim) window?.setDimAmount(parameters.dialog.dimValue)
       else window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
 
-      setCanceledOnTouchOutside(parameters.dialog.isCancelableOnTouchOutside)
+      setCanceledOnTouchOutside(parameters.dialog.isCancelableOnTouchOutside || parameters.dialog.ctaMode is CtaMode.None)
       setOnKeyListener(this@BaseDialog)
     }
   }
@@ -94,7 +95,7 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
 
   override fun onKey(dialog: DialogInterface?, keyCode: Int, event: KeyEvent?): Boolean {
     if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-      return !parameters.dialog.isCancelableOnTouchOutside
+      return !parameters.dialog.isCancelableOnTouchOutside || parameters.dialog.ctaMode !is CtaMode.None
     }
 
     return false

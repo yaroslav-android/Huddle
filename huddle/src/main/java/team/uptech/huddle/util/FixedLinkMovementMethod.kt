@@ -8,6 +8,7 @@ import android.text.style.CharacterStyle
 import android.text.style.ClickableSpan
 import android.view.MotionEvent
 import android.widget.TextView
+import androidx.annotation.RestrictTo
 
 
 /**
@@ -24,7 +25,9 @@ import android.widget.TextView
  *
  * @author Floern
  * @see LinkMovementMethod
+ * @hide
  */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class FixedLinkMovementMethod : LinkMovementMethod() {
   override fun onTouchEvent(widget: TextView, buffer: Spannable, event: MotionEvent): Boolean {
     val action: Int = event.action

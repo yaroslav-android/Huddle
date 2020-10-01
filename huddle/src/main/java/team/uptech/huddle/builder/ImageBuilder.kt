@@ -3,6 +3,7 @@ package team.uptech.huddle.builder
 import android.graphics.Bitmap
 import android.widget.ImageView
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
+import team.uptech.huddle.util.Constants.NO_SIZE
 import team.uptech.huddle.util.ElementMarker
 
 
@@ -20,7 +21,7 @@ import team.uptech.huddle.util.ElementMarker
 class ImageBuilder {
   var resource: Int = NO_IMAGE_RES
   var bitmap: Bitmap? = null
-  var width: Int = 0
-  var height: Int = 0
+  var width: Int = NO_SIZE
+  var height: Int = NO_SIZE
   var scaleType: ImageView.ScaleType = ImageView.ScaleType.FIT_CENTER
 }

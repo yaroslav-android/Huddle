@@ -5,13 +5,17 @@ import android.text.SpannableString
 import android.widget.ImageView
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
+import androidx.annotation.RestrictTo
 import team.uptech.huddle.Huddle
 import team.uptech.huddle.model.ContentType
 import team.uptech.huddle.model.CtaMode
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
+import team.uptech.huddle.util.Constants.NO_SIZE
 
 
+/** @hide */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class Dialog {
   var ctaMode: CtaMode = CtaMode.Single
   var contentType: ContentType = ContentType.ScrollView
@@ -27,8 +31,8 @@ class Dialog {
   class Image {
     var resource: Int = NO_IMAGE_RES
     var bitmap: Bitmap? = null
-    var width: Int = 0
-    var height: Int = 0
+    var width: Int = NO_SIZE
+    var height: Int = NO_SIZE
     var scaleType: ImageView.ScaleType = ImageView.ScaleType.FIT_CENTER
   }
 

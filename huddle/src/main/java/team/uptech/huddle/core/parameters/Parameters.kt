@@ -8,6 +8,7 @@ import team.uptech.huddle.core.BaseBuilder
 /**
  * Properties from DSL Builder for TODO: add docs
  * @see DialogBuilder
+ * @hide
  */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class Parameters {
