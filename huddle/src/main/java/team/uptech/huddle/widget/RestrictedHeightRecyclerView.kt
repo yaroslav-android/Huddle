@@ -2,10 +2,13 @@ package team.uptech.huddle.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import androidx.annotation.RestrictTo
 import androidx.recyclerview.widget.RecyclerView
 import team.uptech.huddle.R
 
 
+/** @hide */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class RestrictedHeightRecyclerView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
