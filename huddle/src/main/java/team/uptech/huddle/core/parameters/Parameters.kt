@@ -47,6 +47,9 @@ class Parameters {
     dialog.dimValue = builder.dialog.dimValue
     dialog.ctaMode = builder.dialog.ctaMode
     dialog.contentType = builder.dialog.contentType
+    dialog.shape = builder.dialog.shape
+
+    colors.shapeTint = builder.dialog.shapeTint
 
     texts.title = builder.dialog.content.title
     texts.message = builder.dialog.content.message

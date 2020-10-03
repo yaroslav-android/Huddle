@@ -10,13 +10,11 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
 import team.uptech.huddle.R
 import team.uptech.huddle.core.parameters.Parameters
 import team.uptech.huddle.model.CtaMode
-import team.uptech.huddle.util.extension.dp
+import team.uptech.huddle.util.extension.getColorIfNotDefaultWithFallback
 import team.uptech.huddle.util.extension.getThemeColor
 import team.uptech.huddle.util.extension.setWidthRelativeToParent
 
@@ -60,25 +58,29 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
   /**
    * TODO: add docs
    */
-  protected open fun createDialogShape(): MaterialShapeDrawable {
+  protected open fun createDialogShape(): MaterialShapeDrawable? {
+    val shape = parameters.dialog.shape ?: return null
+    return MaterialShapeDrawable(shape).applyTint()
+  }
 
-    // TODO: add MaterialShapeDrawable customisation support
-    val shape = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp)
-    val drawable = MaterialShapeDrawable(shape.build())
-
+  private fun MaterialShapeDrawable.applyTint(): MaterialShapeDrawable {
     val handleError: (exception: Throwable) -> Unit = { error ->
       Log.e(TAG, "Failed to resolve colorBackground.", error)
     }
 
     try {
-      drawable.setTint(requireContext().getThemeColor(android.R.attr.colorBackground))
+      requireContext().getColorIfNotDefaultWithFallback(
+        parameters.colors.shapeTint,
+        action = { setTint(it) },
+        fallback = { setTint(requireContext().getThemeColor(android.R.attr.colorBackground)) }
+      )
     } catch (exception: Resources.NotFoundException) {
       handleError(exception)
     } catch (exception: UnsupportedOperationException) {
       handleError(exception)
     }
 
-    return drawable
+    return this
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
