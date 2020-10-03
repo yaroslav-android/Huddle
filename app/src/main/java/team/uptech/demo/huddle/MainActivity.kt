@@ -32,5 +32,17 @@ class MainActivity : AppCompatActivity() {
 
       buildSimpleDialog().compose(this).also { dialog = it }
     }
+
+    btnSimpleSingleImageCtaDialog.setOnClickListener {
+      if (dialog.isLaunched()) return@setOnClickListener
+
+      buildSimpleImageDialog().compose(this).also { dialog = it }
+    }
+
+    btnOnlyImageDialog.setOnClickListener {
+      if (dialog.isLaunched()) return@setOnClickListener
+
+      buildOnlyImageDialog().compose(this).also { dialog = it }
+    }
   }
 }
