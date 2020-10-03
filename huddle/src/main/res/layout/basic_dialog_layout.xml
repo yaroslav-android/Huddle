@@ -18,9 +18,11 @@
         android:layout_height="wrap_content"
         android:contentDescription="@null"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/glBottomBarrier"
         app:layout_constraintEnd_toStartOf="@id/glRightBarrier"
         app:layout_constraintStart_toEndOf="@id/glLeftBarrier"
         app:layout_constraintTop_toBottomOf="@id/glTopBarrier"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_height="100dp"
         tools:layout_width="100dp"
         tools:srcCompat="@tools:sample/avatars"
@@ -93,7 +95,7 @@ ollar you spend is impacting the world." />
 
     <View
         android:id="@+id/vDividerBottom"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/lightGrey65"
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +186,7 @@ ollar you spend is impacting the world." />
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintGuide_end="16dp" />
+        app:layout_constraintGuide_end="24dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glTopBarrier"

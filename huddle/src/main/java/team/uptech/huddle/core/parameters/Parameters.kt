@@ -25,6 +25,7 @@ class Parameters {
     image.height = builder.image.height
     image.scaleType = builder.image.scaleType
 
+    colors.imageTint = builder.image.tint
     colors.progress = builder.progress.progressColorRes
     colors.title = builder.dialog.content.color.titleRes
     colors.message = builder.dialog.content.color.messageRes

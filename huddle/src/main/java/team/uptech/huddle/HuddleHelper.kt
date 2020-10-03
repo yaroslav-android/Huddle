@@ -45,9 +45,25 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
   }
 
   internal fun setParametersToView() {
+    setupGuideLines()
     setupDialogAppearance()
     setupDialogTheme()
     setupDialogContent()
+  }
+
+  private fun setupGuideLines() {
+    with(parameters) {
+      setupBottomGuideLineMargin()
+    }
+  }
+
+  private fun Parameters.setupBottomGuideLineMargin() {
+    view.glBottomBarrier.setGuidelineEnd(
+      when (dialog.ctaMode) {
+        CtaMode.Single, CtaMode.None -> 24f.dp
+        CtaMode.Duo -> 16f.dp
+      }.toInt()
+    )
   }
 
   private fun setupDialogAppearance() {
@@ -68,7 +84,7 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
   }
 
   private fun Parameters.setupActionPositiveVisibility() {
-    view.actionNegative.makeVisibleOrGone { dialog.ctaMode is CtaMode.Duo || dialog.ctaMode is CtaMode.Single }
+    view.actionPositive.makeVisibleOrGone { dialog.ctaMode is CtaMode.Duo || dialog.ctaMode is CtaMode.Single }
   }
 
   private fun Parameters.setupActionNegativeVisibility() {
@@ -103,11 +119,18 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
 
   private fun setupDialogTheme() {
     with(parameters) {
+      setupImageColor()
       setupProgressColor()
       setupTitleColor()
       setupMessageColor()
       setupPositiveCtaColor()
       setupNegativeCtaColor()
+    }
+  }
+
+  private fun Parameters.setupImageColor() {
+    view.requireContext().getColorIfNotDefault(colors.imageTint) {
+      view.dialogImage.setColorFilter(it)
     }
   }
 

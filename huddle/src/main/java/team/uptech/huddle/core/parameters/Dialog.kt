@@ -47,6 +47,7 @@ class Dialog {
 
   class Color {
     var progress: Int = DEFAULT_COLOR
+    var imageTint: Int = DEFAULT_COLOR
 
     var title: Int = DEFAULT_COLOR
     var message: Int = DEFAULT_COLOR

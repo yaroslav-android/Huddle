@@ -2,6 +2,7 @@ package team.uptech.huddle.builder
 
 import android.graphics.Bitmap
 import android.widget.ImageView
+import team.uptech.huddle.util.Constants.DEFAULT_COLOR
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
 import team.uptech.huddle.util.Constants.NO_SIZE
 import team.uptech.huddle.util.ElementMarker
@@ -24,4 +25,5 @@ class ImageBuilder {
   var width: Int = NO_SIZE
   var height: Int = NO_SIZE
   var scaleType: ImageView.ScaleType = ImageView.ScaleType.FIT_CENTER
+  var tint: Int = DEFAULT_COLOR
 }
