@@ -105,14 +105,21 @@ fun Dialog.setWidthRelativeToParent(activity: Activity?, percentage: Int) {
   window?.setLayout(calculatedDialogWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 fun Context.getColorIfNotDefault(@ColorRes colorRes: Int, action: (color: Int) -> Unit) {
-  if (colorRes != DEFAULT_COLOR) action.invoke(ContextCompat.getColor(this, colorRes))
+  getColorIfNotDefaultWithFallback(colorRes, action, fallback = {})
+}
+
+/** @hide */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+fun Context.getColorIfNotDefaultWithFallback(
+  @ColorRes colorRes: Int,
+  action: (color: Int) -> Unit,
+  fallback: () -> Unit
+) {
+  if (colorRes != DEFAULT_COLOR) action(ContextCompat.getColor(this, colorRes))
+  else fallback()
 }
 
 /**

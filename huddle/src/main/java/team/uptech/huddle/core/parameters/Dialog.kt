@@ -6,9 +6,11 @@ import android.widget.ImageView
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
 import androidx.annotation.RestrictTo
+import com.google.android.material.shape.ShapeAppearanceModel
 import team.uptech.huddle.Huddle
 import team.uptech.huddle.model.ContentType
 import team.uptech.huddle.model.CtaMode
+import team.uptech.huddle.util.Constants
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
 import team.uptech.huddle.util.Constants.NO_SIZE
@@ -17,6 +19,7 @@ import team.uptech.huddle.util.Constants.NO_SIZE
 /** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class Dialog {
+  var shape: ShapeAppearanceModel? = Constants.DEFAULT_DIALOG_SHAPE
   var ctaMode: CtaMode = CtaMode.Single
   var contentType: ContentType = ContentType.ScrollView
   var isCancelableOnTouchOutside: Boolean = false
@@ -46,6 +49,7 @@ class Dialog {
   }
 
   class Color {
+    var shapeTint: Int = DEFAULT_COLOR
     var progress: Int = DEFAULT_COLOR
     var imageTint: Int = DEFAULT_COLOR
 

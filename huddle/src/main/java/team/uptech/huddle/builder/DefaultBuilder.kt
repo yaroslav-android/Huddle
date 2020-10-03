@@ -1,7 +1,10 @@
 package team.uptech.huddle.builder
 
+import com.google.android.material.shape.ShapeAppearanceModel
 import team.uptech.huddle.model.ContentType
 import team.uptech.huddle.model.CtaMode
+import team.uptech.huddle.util.Constants
+import team.uptech.huddle.util.Constants.DEFAULT_DIALOG_SHAPE
 import team.uptech.huddle.util.ElementMarker
 
 
@@ -25,6 +28,8 @@ open class DefaultBuilder {
   var dimValue: Float = 0.25f
   var ctaMode: CtaMode = CtaMode.Single
   var contentType: ContentType = ContentType.ScrollView
+  var shape: ShapeAppearanceModel? = DEFAULT_DIALOG_SHAPE
+  var shapeTint: Int = Constants.DEFAULT_COLOR
 
   @ElementMarker
   fun content(init: ContentBuilder.() -> Unit) {

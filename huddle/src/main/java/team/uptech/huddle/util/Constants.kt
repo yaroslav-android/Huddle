@@ -1,6 +1,9 @@
 package team.uptech.huddle.util
 
 import androidx.annotation.RestrictTo
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.ShapeAppearanceModel
+import team.uptech.huddle.util.extension.dp
 
 
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
@@ -20,6 +23,11 @@ object Constants {
    * TODO: add docs
    */
   const val NO_SIZE = -1
+
+  /**
+   * TODO: add docs
+   */
+  val DEFAULT_DIALOG_SHAPE = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp).build()
 
   /**
    * Use in conjunction with `@Deprecated` annotation
