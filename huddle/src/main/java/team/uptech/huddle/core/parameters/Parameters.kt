@@ -5,11 +5,7 @@ import team.uptech.huddle.builder.Builder
 import team.uptech.huddle.core.BaseBuilder
 
 
-/**
- * Properties from DSL Builder for TODO: add docs
- * @see DialogBuilder
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class Parameters {
   val dialog: Dialog = Dialog()
