@@ -30,6 +30,11 @@ object Constants {
   val DEFAULT_DIALOG_SHAPE = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp).build()
 
   /**
+   * TODO: add docs
+   */
+  const val DEFAULT_FONT = -1
+
+  /**
    * Use in conjunction with `@Deprecated` annotation
    * for all methods/objects/classes/etc. informs that in further PRs it will be removed.
    *
