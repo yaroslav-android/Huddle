@@ -8,11 +8,9 @@ import android.text.style.CharacterStyle
 import android.text.style.ClickableSpan
 import android.view.MotionEvent
 import android.widget.TextView
-import androidx.annotation.RestrictTo
 
 
 /**
- *
  * The onTouchEvent() implementation of the LinkMovementMethod requests all ClickableSpan instances
  * from the SpannableStringBuilder with getSpans() that filters its spans basically with `instanceof`.
  *
@@ -25,9 +23,7 @@ import androidx.annotation.RestrictTo
  *
  * @author Floern
  * @see LinkMovementMethod
- * @hide
  */
-@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class FixedLinkMovementMethod : LinkMovementMethod() {
   override fun onTouchEvent(widget: TextView, buffer: Spannable, event: MotionEvent): Boolean {
     val action: Int = event.action
