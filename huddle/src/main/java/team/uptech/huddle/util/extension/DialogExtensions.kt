@@ -6,13 +6,13 @@ import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.Typeface
+import android.os.Build
 import android.view.ViewGroup
-import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.annotation.RestrictTo
+import androidx.annotation.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.content.res.use
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -136,4 +136,27 @@ fun Context.getColorIfNotDefaultWithFallback(
 fun Context.getThemeColor(@AttrRes colorAttrId: Int): Int {
   return obtainStyledAttributes(intArrayOf(colorAttrId))
     .use { it.getColor(0, Color.WHITE) }
+}
+
+/**
+ * TODO: add docs
+ *
+ * @hide
+ */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+fun Context.getFont(@FontRes fontResId: Int): Typeface? {
+  return try {
+    if (buildVersionGE(Build.VERSION_CODES.O)) {
+      resources.getFont(fontResId)
+    } else {
+      ResourcesCompat.getFont(this, fontResId)
+    }
+  } catch (e: Exception) {
+    val font = Typeface.create("sans-serif", Typeface.NORMAL)
+    when (e) {
+      is Resources.NotFoundException,
+      is NullPointerException -> font
+      else -> font
+    }
+  }
 }

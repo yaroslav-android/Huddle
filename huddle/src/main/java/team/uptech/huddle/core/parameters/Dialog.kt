@@ -12,6 +12,7 @@ import team.uptech.huddle.model.ContentType
 import team.uptech.huddle.model.CtaMode
 import team.uptech.huddle.util.Constants
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
+import team.uptech.huddle.util.Constants.DEFAULT_FONT
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
 import team.uptech.huddle.util.Constants.NO_SIZE
 
@@ -64,6 +65,12 @@ class Dialog {
 
     var positiveCtaRipple: Int = DEFAULT_COLOR
     var negativeCtaRipple: Int = DEFAULT_COLOR
+  }
+
+  class Font {
+    var titleFont: Int = DEFAULT_FONT
+    var messageFont: Int = DEFAULT_FONT
+    var ctaFont: Int = DEFAULT_FONT
   }
 
   class Listener {
