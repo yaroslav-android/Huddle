@@ -176,10 +176,7 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
   }
 
   private fun setupFont(view: TextView, fontRes: Int) {
-    if (fontRes != DEFAULT_FONT) {
-      val typeface = view.context.getFont(fontRes)
-      view.typeface = typeface
-    }
+    if (fontRes != DEFAULT_FONT) view.typeface = view.context.getFont(fontRes)
   }
 
   private fun setupCtaBackground(view: MaterialButton, colorRes: Int, isSecondaryCTA: Boolean) {
