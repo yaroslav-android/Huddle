@@ -2,13 +2,12 @@ package team.uptech.huddle.widget
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.annotation.RestrictTo
 import androidx.recyclerview.widget.RecyclerView
 import team.uptech.huddle.R
 
-
-/** @hide */
-@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+/**
+ * The class allows the content to fill to a certain height and only then starts scrolling.
+ */
 class RestrictedHeightRecyclerView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
@@ -21,6 +20,7 @@ class RestrictedHeightRecyclerView @JvmOverloads constructor(
     if (!isInEditMode) {
       if (attrs != null) {
         val styledAttrs = context.obtainStyledAttributes(attrs, R.styleable.RestrictedHeightRecyclerView)
+
         maxHeight = styledAttrs.getDimensionPixelSize(
           R.styleable.RestrictedHeightRecyclerView_restrictedHeight,
           resources.getDimensionPixelSize(R.dimen.dialog_default_content_height)

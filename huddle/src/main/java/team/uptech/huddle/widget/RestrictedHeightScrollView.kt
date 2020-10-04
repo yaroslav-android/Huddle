@@ -3,12 +3,12 @@ package team.uptech.huddle.widget
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.ScrollView
-import androidx.annotation.RestrictTo
 import team.uptech.huddle.R
 
 
-/** @hide */
-@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+/**
+ * The class allows list items to fill to a certain height and only then starts scrolling.
+ */
 class RestrictedHeightScrollView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
