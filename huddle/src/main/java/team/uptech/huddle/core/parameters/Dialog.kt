@@ -61,6 +61,9 @@ class Dialog {
 
     var positiveCtaBackground: Int = DEFAULT_COLOR
     var negativeCtaBackground: Int = DEFAULT_COLOR
+
+    var positiveCtaRipple: Int = DEFAULT_COLOR
+    var negativeCtaRipple: Int = DEFAULT_COLOR
   }
 
   class Listener {
