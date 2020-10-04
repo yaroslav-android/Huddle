@@ -6,6 +6,7 @@ import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.view.Gravity
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
@@ -18,11 +19,9 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import team.uptech.huddle.Huddle
-import team.uptech.huddle.R
 import team.uptech.huddle.core.BaseBuilder
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
 import team.uptech.huddle.util.RootMarker
-import kotlin.math.min
 import kotlin.math.roundToInt
 
 
@@ -32,9 +31,7 @@ import kotlin.math.roundToInt
  * @see DialogBuilder
  */
 @RootMarker
-inline fun <reified Builder : BaseBuilder> Huddle.create(
-  builder: Builder.() -> Unit
-): Huddle {
+inline fun <reified Builder : BaseBuilder> Huddle.create(builder: Builder.() -> Unit): Huddle {
   val dialogBuilder = Builder::class.java.newInstance()
   return importSettings(dialogBuilder.apply(builder))
 }
@@ -70,16 +67,9 @@ inline fun <reified T : DialogFragment> T.compose(from: Fragment): T {
   return this
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
-inline fun <reified T : DialogFragment> tryAddDialogToStack(
-  dialog: T,
-  fragmentManager: FragmentManager
-) {
+inline fun <reified T : DialogFragment> tryAddDialogToStack(dialog: T, fragmentManager: FragmentManager) {
   with(fragmentManager) {
     if (!isDestroyed && !isStateSaved) {
       beginTransaction()
@@ -89,20 +79,15 @@ inline fun <reified T : DialogFragment> tryAddDialogToStack(
   }
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 fun Dialog.setWidthRelativeToParent(activity: Activity?, percentage: Int) {
   val screen = activity ?: return
 
-  val defaultDialogWidth = screen.resources.getDimension(R.dimen.dialog_default_width)
-  val dynamicWidth = (percentage / 100.0f * screen.getMinWidthValue())
+  val dynamicWidth = (percentage / 100.0f * screen.getScreenWidth())
 
-  val calculatedDialogWidth = min(defaultDialogWidth, dynamicWidth).roundToInt()
-  window?.setLayout(calculatedDialogWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
+  window?.setGravity(Gravity.CENTER or Gravity.CENTER_HORIZONTAL)
+  window?.setLayout(dynamicWidth.roundToInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
 }
 
 /** @hide */

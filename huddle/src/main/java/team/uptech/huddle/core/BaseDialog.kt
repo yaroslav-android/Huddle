@@ -5,10 +5,7 @@ import android.content.DialogInterface
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
+import android.view.*
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.shape.MaterialShapeDrawable
 import team.uptech.huddle.R
@@ -89,10 +86,9 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
     applySettings()
   }
 
-  override fun onStart() {
-    super.onStart()
-
+  override fun onStart(){
     dialog?.setWidthRelativeToParent(activity, parameters.dialog.widthPercentage)
+    super.onStart()
   }
 
   override fun onKey(dialog: DialogInterface?, keyCode: Int, event: KeyEvent?): Boolean {
