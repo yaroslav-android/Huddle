@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.basic_dialog_layout.*
 import team.uptech.huddle.core.parameters.Parameters
 import team.uptech.huddle.model.ContentType
 import team.uptech.huddle.model.CtaMode
+import team.uptech.huddle.util.Constants.DEFAULT_FONT
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
 import team.uptech.huddle.util.Constants.NO_SIZE
 import team.uptech.huddle.util.FixedLinkMovementMethod
@@ -125,6 +126,9 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
       setupMessageColor()
       setupPositiveCtaColor()
       setupNegativeCtaColor()
+      setupPositiveCtaRippleColor()
+      setupNegativeCtaRippleColor()
+      setupFonts()
     }
   }
 
@@ -162,8 +166,35 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
     setupCtaBackground(view.actionNegative, colors.negativeCtaBackground, isSecondaryCTA = true)
   }
 
+  private fun Parameters.setupPositiveCtaRippleColor() {
+    if (dialog.ctaMode is CtaMode.None) return
+
+    setupCtaRippleColor(view.actionPositive, colors.positiveCtaRipple)
+  }
+
+  private fun Parameters.setupNegativeCtaRippleColor() {
+    if (dialog.ctaMode is CtaMode.None || dialog.ctaMode is CtaMode.Single) return
+
+    setupCtaRippleColor(view.actionNegative, colors.negativeCtaRipple)
+  }
+
+  private fun setupCtaRippleColor(view: MaterialButton, colorRes: Int) {
+    view.context.getColorIfNotDefault(colorRes) { view.rippleColor = ColorStateList.valueOf(it) }
+  }
+
   private fun setupTextColor(view: TextView, colorRes: Int) {
     view.context.getColorIfNotDefault(colorRes) { view.setTextColor(it) }
+  }
+
+  private fun Parameters.setupFonts() {
+    setupFont(view.dialogTitle, fonts.titleFont)
+    setupFont(view.dialogMessage, fonts.messageFont)
+    setupFont(view.actionPositive, fonts.ctaFont)
+    setupFont(view.actionNegative, fonts.ctaFont)
+  }
+
+  private fun setupFont(view: TextView, fontRes: Int) {
+    if (fontRes != DEFAULT_FONT) view.typeface = view.context.getFont(fontRes)
   }
 
   private fun setupCtaBackground(view: MaterialButton, colorRes: Int, isSecondaryCTA: Boolean) {

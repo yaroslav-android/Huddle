@@ -20,14 +20,22 @@ fun Context.buildSimpleDuoCtaDialog() = Huddle().create<Builder> {
         "we are able to score each company based on how well they treat their employees, " +
         "their commitment to environmental improvements, and their ethical business practice.\nEach dollar you spend is impacting the world."
     }
+
+    font {
+      titleFont = R.font.lato_bold
+      messageFont = R.font.lato_regular
+      ctaFont = R.font.lato_semibold
+    }
   }
 
   positiveCTA {
     text = "OK, got it!"
+    backgroundColorRes = R.color.colorPrimary
   }
 
   negativeCTA {
     text = "Dismiss"
+    rippleColorRes = R.color.colorPrimary10
   }
 }
 

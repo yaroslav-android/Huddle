@@ -21,6 +21,7 @@ import team.uptech.huddle.util.ElementMarker
 @ElementMarker
 open class DefaultBuilder {
   val content: ContentBuilder = ContentBuilder()
+  val font: FontBuilder = FontBuilder()
 
   var widthPercentage: Int = 90
   var isCancelableOnTouchOutside: Boolean = false
@@ -34,5 +35,10 @@ open class DefaultBuilder {
   @ElementMarker
   fun content(init: ContentBuilder.() -> Unit) {
     content.apply(init)
+  }
+
+  @ElementMarker
+  fun font(init: FontBuilder.() -> Unit) {
+    font.apply(init)
   }
 }

@@ -16,6 +16,7 @@ class Parameters {
   val image: Dialog.Image = Dialog.Image()
   val texts: Dialog.Text = Dialog.Text()
   val colors: Dialog.Color = Dialog.Color()
+  val fonts: Dialog.Font = Dialog.Font()
   val listeners: Dialog.Listener = Dialog.Listener()
 
   fun importFrom(builder: Builder) {
@@ -33,6 +34,8 @@ class Parameters {
     colors.negativeCtaText = builder.negativeCTA.textColorRes
     colors.positiveCtaBackground = builder.positiveCTA.backgroundColorRes
     colors.negativeCtaBackground = builder.negativeCTA.backgroundColorRes
+    colors.positiveCtaRipple = builder.positiveCTA.rippleColorRes
+    colors.negativeCtaRipple = builder.negativeCTA.rippleColorRes
 
     texts.positiveCtaText = builder.positiveCTA.text
     texts.negativeCtaText = builder.negativeCTA.text
@@ -55,5 +58,9 @@ class Parameters {
     texts.title = builder.dialog.content.title
     texts.message = builder.dialog.content.message
     texts.messageSpan = builder.dialog.content.messageSpan
+
+    fonts.titleFont = builder.dialog.font.titleFont
+    fonts.messageFont = builder.dialog.font.messageFont
+    fonts.ctaFont = builder.dialog.font.ctaFont
   }
 }
