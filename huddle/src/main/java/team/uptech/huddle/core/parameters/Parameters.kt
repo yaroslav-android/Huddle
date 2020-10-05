@@ -34,6 +34,8 @@ class Parameters {
     colors.negativeCtaText = builder.negativeCTA.textColorRes
     colors.positiveCtaBackground = builder.positiveCTA.backgroundColorRes
     colors.negativeCtaBackground = builder.negativeCTA.backgroundColorRes
+    colors.positiveCtaRipple = builder.positiveCTA.rippleColorRes
+    colors.negativeCtaRipple = builder.negativeCTA.rippleColorRes
 
     texts.positiveCtaText = builder.positiveCTA.text
     texts.negativeCtaText = builder.negativeCTA.text

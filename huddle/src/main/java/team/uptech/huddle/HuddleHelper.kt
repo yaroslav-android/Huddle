@@ -126,6 +126,8 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
       setupMessageColor()
       setupPositiveCtaColor()
       setupNegativeCtaColor()
+      setupPositiveCtaRippleColor()
+      setupNegativeCtaRippleColor()
       setupFonts()
     }
   }
@@ -162,6 +164,22 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
 
     setupTextColor(view.actionNegative, colors.negativeCtaText)
     setupCtaBackground(view.actionNegative, colors.negativeCtaBackground, isSecondaryCTA = true)
+  }
+
+  private fun Parameters.setupPositiveCtaRippleColor() {
+    if (dialog.ctaMode is CtaMode.None) return
+
+    setupCtaRippleColor(view.actionPositive, colors.positiveCtaRipple)
+  }
+
+  private fun Parameters.setupNegativeCtaRippleColor() {
+    if (dialog.ctaMode is CtaMode.None || dialog.ctaMode is CtaMode.Single) return
+
+    setupCtaRippleColor(view.actionNegative, colors.negativeCtaRipple)
+  }
+
+  private fun setupCtaRippleColor(view: MaterialButton, colorRes: Int) {
+    view.context.getColorIfNotDefault(colorRes) { view.rippleColor = ColorStateList.valueOf(it) }
   }
 
   private fun setupTextColor(view: TextView, colorRes: Int) {

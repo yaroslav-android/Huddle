@@ -30,10 +30,12 @@ fun Context.buildSimpleDuoCtaDialog() = Huddle().create<Builder> {
 
   positiveCTA {
     text = "OK, got it!"
+    backgroundColorRes = R.color.colorPrimary
   }
 
   negativeCTA {
     text = "Dismiss"
+    rippleColorRes = R.color.colorPrimary10
   }
 }
 
