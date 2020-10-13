@@ -5,4 +5,11 @@
     <entry key="documentation.show.toolbar" value="true" />
     <entry key="ide.mac.allowDarkWindowDecorations" value="true" />
   </component>
+  <component name="StatusBar">
+    <option name="widgets">
+      <map>
+        <entry key="Memory" value="true" />
+      </map>
+    </option>
+  </component>
 </application>
