@@ -86,7 +86,7 @@ fun Dialog.setWidthRelativeToParent(activity: Activity?, percentage: Int) {
 
   val dynamicWidth = (percentage / 100.0f * screen.getScreenWidth())
 
-  window?.setGravity(Gravity.CENTER or Gravity.CENTER_HORIZONTAL)
+  window?.setGravity(Gravity.CENTER)
   window?.setLayout(dynamicWidth.roundToInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
 }
 

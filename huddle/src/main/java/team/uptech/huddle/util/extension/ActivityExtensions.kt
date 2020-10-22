@@ -17,8 +17,7 @@ fun Activity.getScreenWidth(): Int {
   val heightPixels = metrics.heightPixels
 
   return when (display.rotation) {
-    Surface.ROTATION_0, Surface.ROTATION_180 -> widthPixels
-    Surface.ROTATION_90, Surface.ROTATION_270 -> widthPixels
+    Surface.ROTATION_0, Surface.ROTATION_180, Surface.ROTATION_90, Surface.ROTATION_270 -> widthPixels
     else -> min(heightPixels, widthPixels)
   }
 }
