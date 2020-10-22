@@ -5,9 +5,15 @@ import android.content.DialogInterface
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.KeyEvent
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.shape.MaterialShapeDrawable
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import team.uptech.huddle.R
 import team.uptech.huddle.core.parameters.Parameters
 import team.uptech.huddle.model.CtaMode
@@ -57,7 +63,7 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
    */
   protected open fun createDialogShape(): MaterialShapeDrawable? {
     val shape = parameters.dialog.shape ?: return null
-    return MaterialShapeDrawable(shape).applyTint()
+    return MaterialShapeDrawable(shape.build()).applyTint()
   }
 
   private fun MaterialShapeDrawable.applyTint(): MaterialShapeDrawable {
@@ -86,9 +92,28 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
     applySettings()
   }
 
-  override fun onStart(){
+  override fun onStart() {
     dialog?.setWidthRelativeToParent(activity, parameters.dialog.widthPercentage)
     super.onStart()
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    val bitmap = parameters.image.bitmap
+    if (bitmap != null) outState.putParcelable(BITMAP_KEY, bitmap)
+
+    outState.putString(PARAMETERS_KEY, Json.encodeToString(parameters))
+    super.onSaveInstanceState(outState)
+  }
+
+  override fun onViewStateRestored(savedInstanceState: Bundle?) {
+    super.onViewStateRestored(savedInstanceState)
+    if (savedInstanceState != null) {
+      if (savedInstanceState.containsKey(BITMAP_KEY)) {
+        parameters.image.bitmap = savedInstanceState.getParcelable(BITMAP_KEY)
+      }
+
+      savedInstanceState.getString(PARAMETERS_KEY)?.run { parameters.restore(Json.decodeFromString(this)) }
+    }
   }
 
   override fun onKey(dialog: DialogInterface?, keyCode: Int, event: KeyEvent?): Boolean {
@@ -112,5 +137,7 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
 
   companion object {
     private const val TAG = "BaseDialog"
+    private const val BITMAP_KEY = "dialog-image-bitmap_key"
+    private const val PARAMETERS_KEY = "dialog-parameters_key"
   }
 }

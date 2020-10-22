@@ -43,6 +43,14 @@ open class Huddle : BaseDialog() {
     helper = HuddleHelper(this@Huddle, parameters)
   }
 
+  override fun onViewStateRestored(savedInstanceState: Bundle?) {
+    super.onViewStateRestored(savedInstanceState)
+    if (helper == null) helper = HuddleHelper(this@Huddle, parameters)
+
+    helper?.bindActionListeners()
+    helper?.setParametersToView()
+  }
+
   override fun bindViews(view: View) {
     helper?.bindActionListeners()
   }

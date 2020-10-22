@@ -29,7 +29,7 @@ open class DefaultBuilder {
   var dimValue: Float = 0.25f
   var ctaMode: CtaMode = CtaMode.Single
   var contentType: ContentType = ContentType.ScrollView
-  var shape: ShapeAppearanceModel? = DEFAULT_DIALOG_SHAPE
+  var shape: ShapeAppearanceModel.Builder? = DEFAULT_DIALOG_SHAPE
   var shapeTint: Int = Constants.DEFAULT_COLOR
 
   @ElementMarker

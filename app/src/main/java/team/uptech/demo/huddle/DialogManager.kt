@@ -22,20 +22,20 @@ fun Context.buildSimpleDuoCtaDialog() = Huddle().create<Builder> {
     }
 
     font {
-      titleFont = R.font.lato_bold
-      messageFont = R.font.lato_regular
-      ctaFont = R.font.lato_semibold
+      title = R.font.lato_bold
+      message = R.font.lato_regular
+      cta = R.font.lato_semibold
     }
   }
 
   positiveCTA {
     text = "OK, got it!"
-    backgroundColorRes = R.color.colorPrimary
+    backgroundColor = R.color.colorPrimary
   }
 
   negativeCTA {
     text = "Dismiss"
-    rippleColorRes = R.color.colorPrimary10
+    rippleColor = R.color.colorPrimary10
   }
 }
 

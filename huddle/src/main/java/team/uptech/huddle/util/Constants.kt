@@ -27,7 +27,7 @@ object Constants {
   /**
    * TODO: add docs
    */
-  val DEFAULT_DIALOG_SHAPE = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp).build()
+  val DEFAULT_DIALOG_SHAPE = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp)
 
   /**
    * TODO: add docs
