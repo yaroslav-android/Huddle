@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'kotlinx-serialization'
 apply from: "$rootDir/dependencies.gradle"
 group = 'com.github.yaroslav-android'
 
@@ -47,6 +48,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${libraries.kotlinVersion}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${libraries.serializationVersion}"
 
     /* Android */
     implementation "androidx.constraintlayout:constraintlayout:${libraries.constraintLayoutVersion}"
