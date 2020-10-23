@@ -1,7 +1,7 @@
 package team.uptech.huddle.builder
 
 import team.uptech.huddle.util.Constants
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 /**
  * DSL Builder for TODO: add docs

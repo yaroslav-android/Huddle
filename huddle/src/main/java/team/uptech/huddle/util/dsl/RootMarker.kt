@@ -1,4 +1,4 @@
-package team.uptech.huddle.util
+package team.uptech.huddle.util.dsl
 
 import androidx.annotation.RestrictTo
 
@@ -10,4 +10,4 @@ import androidx.annotation.RestrictTo
  */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 @DslMarker
-annotation class ElementMarker
+annotation class RootMarker

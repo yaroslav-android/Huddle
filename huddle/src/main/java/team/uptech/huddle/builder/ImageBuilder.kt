@@ -5,7 +5,7 @@ import android.widget.ImageView
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
 import team.uptech.huddle.util.Constants.NO_IMAGE_RES
 import team.uptech.huddle.util.Constants.NO_SIZE
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**

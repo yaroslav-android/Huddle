@@ -1,8 +1,7 @@
 package team.uptech.huddle.builder
 
 import team.uptech.huddle.core.BaseBuilder
-import team.uptech.huddle.util.ElementMarker
-import team.uptech.huddle.util.RootMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**
@@ -11,7 +10,7 @@ import team.uptech.huddle.util.RootMarker
  * Allows to build a dialog with single or dual buttons
  *
  */
-@RootMarker
+@ElementMarker
 open class Builder : BaseBuilder() {
   val progress: ProgressBuilder = ProgressBuilder()
   val image: ImageBuilder = ImageBuilder()
