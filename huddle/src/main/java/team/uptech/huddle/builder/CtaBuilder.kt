@@ -2,7 +2,7 @@ package team.uptech.huddle.builder
 
 import team.uptech.huddle.Huddle
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**

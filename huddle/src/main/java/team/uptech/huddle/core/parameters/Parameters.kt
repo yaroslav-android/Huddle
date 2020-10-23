@@ -26,8 +26,8 @@ class Parameters {
 
     colors.imageTint = builder.image.tint
     colors.progress = builder.progress.progressColorRes
-    colors.title = builder.dialog.content.color.titleRes
-    colors.message = builder.dialog.content.color.messageRes
+    colors.title = builder.content.color.titleRes
+    colors.message = builder.content.color.messageRes
     colors.positiveCtaText = builder.positiveCTA.textColor
     colors.negativeCtaText = builder.negativeCTA.textColor
     colors.positiveCtaBackground = builder.positiveCTA.backgroundColor
@@ -43,23 +43,23 @@ class Parameters {
   }
 
   fun importFrom(builder: BaseBuilder) {
-    dialog.widthPercentage = builder.dialog.widthPercentage
-    dialog.isCancelableOnTouchOutside = builder.dialog.isCancelableOnTouchOutside
-    dialog.enableDim = builder.dialog.enableDim
-    dialog.dimValue = builder.dialog.dimValue
-    dialog.ctaMode = builder.dialog.ctaMode
-    dialog.contentType = builder.dialog.contentType
-    dialog.shape = builder.dialog.shape
+    dialog.widthPercentage = builder.widthPercentage
+    dialog.isCancelableOnTouchOutside = builder.isCancelableOnTouchOutside
+    dialog.enableDim = builder.enableDim
+    dialog.dimValue = builder.dimValue
+    dialog.ctaMode = builder.ctaMode
+    dialog.contentType = builder.contentType
+    dialog.shape = builder.shape
 
-    colors.shapeTint = builder.dialog.shapeTint
+    colors.shapeTint = builder.shapeTint
 
-    texts.title = builder.dialog.content.title
-    texts.message = builder.dialog.content.message
-    texts.messageSpan = builder.dialog.content.messageSpan
+    texts.title = builder.content.title
+    texts.message = builder.content.message
+    texts.messageSpan = builder.content.messageSpan
 
-    fonts.titleFont = builder.dialog.font.title
-    fonts.messageFont = builder.dialog.font.message
-    fonts.ctaFont = builder.dialog.font.cta
+    fonts.titleFont = builder.font.title
+    fonts.messageFont = builder.font.message
+    fonts.ctaFont = builder.font.cta
   }
 
   fun restore(restoredParameters: Parameters) {

@@ -6,9 +6,9 @@ import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
-import android.view.Gravity
 import android.graphics.Typeface
 import android.os.Build
+import android.view.Gravity
 import android.view.ViewGroup
 import androidx.annotation.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,10 +18,10 @@ import androidx.core.content.res.use
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import team.uptech.huddle.Huddle
 import team.uptech.huddle.core.BaseBuilder
+import team.uptech.huddle.core.BaseDialog
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
-import team.uptech.huddle.util.RootMarker
+import team.uptech.huddle.util.dsl.RootMarker
 import kotlin.math.roundToInt
 
 
@@ -31,9 +31,11 @@ import kotlin.math.roundToInt
  * @see DialogBuilder
  */
 @RootMarker
-inline fun <reified Builder : BaseBuilder> Huddle.create(builder: Builder.() -> Unit): Huddle {
+inline fun <reified Dialog : BaseDialog, reified Builder : BaseBuilder> dialog(builder: Builder.() -> Unit): Dialog {
+  val dialog = Dialog::class.java.newInstance()
   val dialogBuilder = Builder::class.java.newInstance()
-  return importSettings(dialogBuilder.apply(builder))
+
+  return dialog.importSettings(dialogBuilder.apply(builder)) as Dialog
 }
 
 /**

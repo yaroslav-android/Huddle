@@ -1,7 +1,7 @@
 package team.uptech.huddle.builder
 
 import team.uptech.huddle.util.Constants.DEFAULT_FONT
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 /**
  * Base DSL Builder for TODO: add docs
