@@ -27,7 +27,7 @@ fun View.makeInvisible() {
 /**
  * Based on the result of the [lambda][condition] this view will change its visibility state.
  *
- * @param condition True if this view should be visible, false otherwise.
+ * @param condition true if this view should be visible, false otherwise.
  *
  * @see makeVisible
  * @see makeGone
@@ -39,7 +39,7 @@ inline fun View.makeVisibleOrGone(condition: () -> Boolean) {
 /**
  * Based on the result of the [lambda][condition] this view will change its visibility state.
  *
- * @param condition True if this view should be visible, false otherwise.
+ * @param condition true if this view should be visible, false otherwise.
  *
  * @see makeVisible
  * @see makeInvisible
