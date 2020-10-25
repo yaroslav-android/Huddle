@@ -61,8 +61,8 @@ fun Context.buildSimpleImageDialog() = dialog<Huddle, Builder> {
   image {
     resource = R.drawable.ic_warning
     tint = R.color.blue
-    width = 38.dp
-    height = 38.dp
+    width = 38f.dp.toInt()
+    height = 38f.dp.toInt()
   }
 
   positiveCTA {
@@ -77,7 +77,7 @@ fun Context.buildOnlyImageDialog() = dialog<Huddle, Builder> {
 
   image {
     resource = R.drawable.ic_save_the_planet
-    width = 150.dp
-    height = 150.dp
+    width = 150f.dp.toInt()
+    height = 150f.dp.toInt()
   }
 }
