@@ -80,9 +80,9 @@ class Dialog {
 
   @Serializable
   class Font {
-    var titleFont: Int = DEFAULT_FONT
-    var messageFont: Int = DEFAULT_FONT
-    var ctaFont: Int = DEFAULT_FONT
+    var title: Int = DEFAULT_FONT
+    var message: Int = DEFAULT_FONT
+    var cta: Int = DEFAULT_FONT
   }
 
   @Serializable

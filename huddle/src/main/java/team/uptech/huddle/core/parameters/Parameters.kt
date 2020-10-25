@@ -57,9 +57,9 @@ class Parameters {
     texts.message = builder.content.message
     texts.messageSpan = builder.content.messageSpan
 
-    fonts.titleFont = builder.font.title
-    fonts.messageFont = builder.font.message
-    fonts.ctaFont = builder.font.cta
+    fonts.title = builder.font.title
+    fonts.message = builder.font.message
+    fonts.cta = builder.font.cta
   }
 
   fun restore(restoredParameters: Parameters) {
@@ -100,8 +100,8 @@ class Parameters {
     texts.message = restoredParameters.texts.message
     texts.messageSpan = restoredParameters.texts.messageSpan
 
-    fonts.titleFont = restoredParameters.fonts.titleFont
-    fonts.messageFont = restoredParameters.fonts.messageFont
-    fonts.ctaFont = restoredParameters.fonts.ctaFont
+    fonts.title = restoredParameters.fonts.title
+    fonts.message = restoredParameters.fonts.message
+    fonts.cta = restoredParameters.fonts.cta
   }
 }
