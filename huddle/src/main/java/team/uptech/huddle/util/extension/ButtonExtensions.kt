@@ -20,7 +20,7 @@ fun View.enable() {
 /**
  * Based on the result of the [lambda][condition] this view will change its enabled state.
  *
- * @param condition True if this view should be enabled, false otherwise.
+ * @param condition true if this view should be enabled, false otherwise.
  *
  * @see enable
  * @see disable

@@ -39,17 +39,21 @@ inline fun <reified Dialog : BaseDialog, reified Builder : BaseBuilder> dialog(b
 }
 
 /**
- * TODO: add docs
+ * @return true if the dialog is launched, false otherwise.
  */
 fun DialogFragment?.isLaunched() = this?.isResumed == true || this?.dialog?.isShowing == true
 
 /**
- * TODO: add docs
+ * @return true if the dialog is not launched, false otherwise.
  */
 fun DialogFragment?.isNotLaunched() = !isLaunched()
 
 /**
- * TODO: add docs
+ * Launch the dialog from activity
+ *
+ * @param from the [AppCompatActivity's][AppCompatActivity] instance
+ *
+ * @return The [DialogFragment's][DialogFragment] instance
  */
 inline fun <reified T : DialogFragment> T.compose(from: AppCompatActivity): T {
   if (from.isFinishing) return this
@@ -59,7 +63,11 @@ inline fun <reified T : DialogFragment> T.compose(from: AppCompatActivity): T {
 }
 
 /**
- * TODO: add docs
+ * Launch the dialog from fragment
+ *
+ * @param from the [Fragment's][Fragment] instance
+ *
+ * @return The DialogFragment's instance
  */
 inline fun <reified T : DialogFragment> T.compose(from: Fragment): T {
   val activity = from.activity ?: return this
