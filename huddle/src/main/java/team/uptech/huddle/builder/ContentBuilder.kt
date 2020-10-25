@@ -1,7 +1,7 @@
 package team.uptech.huddle.builder
 
 import android.text.SpannableString
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**

@@ -1,4 +1,4 @@
-package team.uptech.huddle.util
+package team.uptech.huddle.util.dsl
 
 
 /**
