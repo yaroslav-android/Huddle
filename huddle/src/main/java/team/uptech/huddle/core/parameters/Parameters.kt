@@ -25,9 +25,9 @@ class Parameters {
     image.scaleType = builder.image.scaleType
 
     colors.imageTint = builder.image.tint
-    colors.progress = builder.progress.progressColorRes
-    colors.title = builder.content.color.titleRes
-    colors.message = builder.content.color.messageRes
+    colors.progress = builder.progress.progressColor
+    colors.title = builder.content.color.title
+    colors.message = builder.content.color.message
     colors.positiveCtaText = builder.positiveCTA.textColor
     colors.negativeCtaText = builder.negativeCTA.textColor
     colors.positiveCtaBackground = builder.positiveCTA.backgroundColor
@@ -57,9 +57,9 @@ class Parameters {
     texts.message = builder.content.message
     texts.messageSpan = builder.content.messageSpan
 
-    fonts.titleFont = builder.font.title
-    fonts.messageFont = builder.font.message
-    fonts.ctaFont = builder.font.cta
+    fonts.title = builder.font.title
+    fonts.message = builder.font.message
+    fonts.cta = builder.font.cta
   }
 
   fun restore(restoredParameters: Parameters) {
@@ -100,8 +100,8 @@ class Parameters {
     texts.message = restoredParameters.texts.message
     texts.messageSpan = restoredParameters.texts.messageSpan
 
-    fonts.titleFont = restoredParameters.fonts.titleFont
-    fonts.messageFont = restoredParameters.fonts.messageFont
-    fonts.ctaFont = restoredParameters.fonts.ctaFont
+    fonts.title = restoredParameters.fonts.title
+    fonts.message = restoredParameters.fonts.message
+    fonts.cta = restoredParameters.fonts.cta
   }
 }

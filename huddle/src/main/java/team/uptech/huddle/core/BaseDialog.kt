@@ -59,7 +59,10 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
   }
 
   /**
-   * TODO: add docs
+   * Create dialog shape with tint applied. Applies the [shapeTint][BaseBuilder.shapeTint] if specified, otherwise default theme color will be used.
+   * If you want background of the window to be opaque, set [shape][BaseBuilder.shape] to null.
+   *
+   * @return The [MaterialShapeDrawable's][MaterialShapeDrawable] instance.
    */
   protected open fun createDialogShape(): MaterialShapeDrawable? {
     val shape = parameters.dialog.shape ?: return null

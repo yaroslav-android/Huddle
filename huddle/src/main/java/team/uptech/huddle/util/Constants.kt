@@ -10,27 +10,29 @@ import team.uptech.huddle.util.extension.dp
 object Constants {
 
   /**
-   * TODO: add docs
+   * If no color is specified, the default color will be used.
    */
   const val DEFAULT_COLOR = -1
 
   /**
-   * TODO: add docs
+   * If an image resource is not specified, then the image will not be displayed.
    */
   const val NO_IMAGE_RES = -1
 
   /**
-   * TODO: add docs
+   * If no size is specified, then the view will not be displayed.
    */
   const val NO_SIZE = -1
 
   /**
-   * TODO: add docs
+   * Returns the default rounded dialog shape builder.
+   *
+   * @see ShapeAppearanceModel.Builder
    */
   val DEFAULT_DIALOG_SHAPE = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp)
 
   /**
-   * TODO: add docs
+   * If no font is specified, the default system font will be used.
    */
   const val DEFAULT_FONT = -1
 

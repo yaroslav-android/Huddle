@@ -60,7 +60,6 @@ open class Huddle : BaseDialog() {
   }
 
   /**
-   * TODO: add docs
    * @throws IllegalStateException if [title view][MaterialTextView] isn't form the base layout or `null`.
    */
   open fun updateTitle(title: String) {
@@ -68,7 +67,6 @@ open class Huddle : BaseDialog() {
   }
 
   /**
-   * TODO: add docs
    * @throws IllegalStateException if [message view][MaterialTextView] isn't form the base layout or `null`.
    */
   open fun updateMessage(message: String?, messageSpannableString: SpannableString?) {
@@ -86,7 +84,9 @@ open class Huddle : BaseDialog() {
   }
 
   /**
-   * TODO: add docs
+   * Change the visibility of the positive action progress.
+   *
+   * @param shouldShow true if the progress should be showed, false otherwise.
    */
   open fun showProgress(shouldShow: Boolean) {
     if (!isResumed) return

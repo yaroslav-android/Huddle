@@ -187,10 +187,10 @@ class HuddleHelper(private val view: Huddle, private val parameters: Parameters)
   }
 
   private fun Parameters.setupFonts() {
-    setupFont(view.dialogTitle, fonts.titleFont)
-    setupFont(view.dialogMessage, fonts.messageFont)
-    setupFont(view.actionPositive, fonts.ctaFont)
-    setupFont(view.actionNegative, fonts.ctaFont)
+    setupFont(view.dialogTitle, fonts.title)
+    setupFont(view.dialogMessage, fonts.message)
+    setupFont(view.actionPositive, fonts.cta)
+    setupFont(view.actionNegative, fonts.cta)
   }
 
   private fun setupFont(view: TextView, fontRes: Int) {
