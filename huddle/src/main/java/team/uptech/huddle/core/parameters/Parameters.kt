@@ -25,9 +25,9 @@ class Parameters {
     image.scaleType = builder.image.scaleType
 
     colors.imageTint = builder.image.tint
-    colors.progress = builder.progress.progressColorRes
-    colors.title = builder.content.color.titleRes
-    colors.message = builder.content.color.messageRes
+    colors.progress = builder.progress.progressColor
+    colors.title = builder.content.color.title
+    colors.message = builder.content.color.message
     colors.positiveCtaText = builder.positiveCTA.textColor
     colors.negativeCtaText = builder.negativeCTA.textColor
     colors.positiveCtaBackground = builder.positiveCTA.backgroundColor
