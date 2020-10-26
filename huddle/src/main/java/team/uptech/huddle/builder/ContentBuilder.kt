@@ -1,22 +1,36 @@
 package team.uptech.huddle.builder
 
 import android.text.SpannableString
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.core.BaseDialog
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**
- * Base DSL Builder for TODO: add docs
+ * The DSL Builder for [BaseDialog]
  *
- * @property title the text for the dialog title
- * @property message the text for the dialog message
- * @property messageSpan the `SpannableString` for the dialog message
+ * This class is responsible for dialog content color and text setup.
  */
 @ElementMarker
 class ContentBuilder {
+
+  /**
+   * Color DSL builder for title and message.
+   */
   val color: ColorBuilder = ColorBuilder()
 
+  /**
+   * The dialog's title text
+   */
   var title: String = ""
+
+  /**
+   * The dialog's message text
+   */
   var message: String = ""
+
+  /**
+   * The dialog's message [SpannableString]
+   */
   var messageSpan: SpannableString = SpannableString("")
 
   @ElementMarker

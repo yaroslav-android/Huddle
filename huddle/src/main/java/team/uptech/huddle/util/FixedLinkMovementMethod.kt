@@ -11,7 +11,6 @@ import android.widget.TextView
 
 
 /**
- *
  * The onTouchEvent() implementation of the LinkMovementMethod requests all ClickableSpan instances
  * from the SpannableStringBuilder with getSpans() that filters its spans basically with `instanceof`.
  *

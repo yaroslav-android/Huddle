@@ -6,6 +6,9 @@ import android.widget.ScrollView
 import team.uptech.huddle.R
 
 
+/**
+ * The class allows list items to fill to a certain height and only then starts scrolling.
+ */
 class RestrictedHeightScrollView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,

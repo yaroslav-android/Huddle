@@ -32,4 +32,29 @@
         app:layout_constraintStart_toEndOf="@+id/btnSimpleDuoCtaDialog"
         app:layout_constraintTop_toTopOf="@+id/btnSimpleDuoCtaDialog" />
 
+    <Button
+        android:id="@+id/btnSimpleSingleImageCtaDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Simple Image CTA Dialog"
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSimpleDuoCtaDialog" />
+
+    <Button
+        android:id="@+id/btnOnlyImageDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Only Image Dialog"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSimpleSingleImageCtaDialog"
+        app:layout_constraintTop_toBottomOf="@+id/btnSimpleSingleCtaDialog" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,12 +10,14 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import team.uptech.huddle.R
 import team.uptech.huddle.core.parameters.Parameters
-import team.uptech.huddle.util.extension.dp
+import team.uptech.huddle.model.CtaMode
+import team.uptech.huddle.util.extension.getColorIfNotDefaultWithFallback
 import team.uptech.huddle.util.extension.getThemeColor
 import team.uptech.huddle.util.extension.setWidthRelativeToParent
 
@@ -51,33 +53,40 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
       if (parameters.dialog.enableDim) window?.setDimAmount(parameters.dialog.dimValue)
       else window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
 
-      setCanceledOnTouchOutside(parameters.dialog.isCancelableOnTouchOutside)
+      setCanceledOnTouchOutside(parameters.dialog.isCancelableOnTouchOutside || parameters.dialog.ctaMode is CtaMode.None)
       setOnKeyListener(this@BaseDialog)
     }
   }
 
   /**
-   * TODO: add docs
+   * Create dialog shape with tint applied. Applies the [shapeTint][BaseBuilder.shapeTint] if specified, otherwise default theme color will be used.
+   * If you want background of the window to be opaque, set [shape][BaseBuilder.shape] to null.
+   *
+   * @return The [MaterialShapeDrawable's][MaterialShapeDrawable] instance.
    */
-  protected open fun createDialogShape(): MaterialShapeDrawable {
+  protected open fun createDialogShape(): MaterialShapeDrawable? {
+    val shape = parameters.dialog.shape ?: return null
+    return MaterialShapeDrawable(shape.build()).applyTint()
+  }
 
-    // TODO: add MaterialShapeDrawable customisation support
-    val shape = ShapeAppearanceModel.builder().setAllCorners(CornerFamily.ROUNDED, 8f.dp)
-    val drawable = MaterialShapeDrawable(shape.build())
-
+  private fun MaterialShapeDrawable.applyTint(): MaterialShapeDrawable {
     val handleError: (exception: Throwable) -> Unit = { error ->
       Log.e(TAG, "Failed to resolve colorBackground.", error)
     }
 
     try {
-      drawable.setTint(requireContext().getThemeColor(android.R.attr.colorBackground))
+      requireContext().getColorIfNotDefaultWithFallback(
+        parameters.colors.shapeTint,
+        action = { setTint(it) },
+        fallback = { setTint(requireContext().getThemeColor(android.R.attr.colorBackground)) }
+      )
     } catch (exception: Resources.NotFoundException) {
       handleError(exception)
     } catch (exception: UnsupportedOperationException) {
       handleError(exception)
     }
 
-    return drawable
+    return this
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -87,14 +96,32 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
   }
 
   override fun onStart() {
-    super.onStart()
-
     dialog?.setWidthRelativeToParent(activity, parameters.dialog.widthPercentage)
+    super.onStart()
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    val bitmap = parameters.image.bitmap
+    if (bitmap != null) outState.putParcelable(BITMAP_KEY, bitmap)
+
+    outState.putString(PARAMETERS_KEY, Json.encodeToString(parameters))
+    super.onSaveInstanceState(outState)
+  }
+
+  override fun onViewStateRestored(savedInstanceState: Bundle?) {
+    super.onViewStateRestored(savedInstanceState)
+    if (savedInstanceState != null) {
+      if (savedInstanceState.containsKey(BITMAP_KEY)) {
+        parameters.image.bitmap = savedInstanceState.getParcelable(BITMAP_KEY)
+      }
+
+      savedInstanceState.getString(PARAMETERS_KEY)?.run { parameters.restore(Json.decodeFromString(this)) }
+    }
   }
 
   override fun onKey(dialog: DialogInterface?, keyCode: Int, event: KeyEvent?): Boolean {
     if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-      return !parameters.dialog.isCancelableOnTouchOutside
+      return !parameters.dialog.isCancelableOnTouchOutside || parameters.dialog.ctaMode !is CtaMode.None
     }
 
     return false
@@ -113,5 +140,7 @@ abstract class BaseDialog : DialogFragment(), DialogInterface.OnKeyListener {
 
   companion object {
     private const val TAG = "BaseDialog"
+    private const val BITMAP_KEY = "dialog-image-bitmap_key"
+    private const val PARAMETERS_KEY = "dialog-parameters_key"
   }
 }

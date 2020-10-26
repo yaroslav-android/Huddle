@@ -6,23 +6,22 @@ import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.Typeface
+import android.os.Build
+import android.view.Gravity
 import android.view.ViewGroup
-import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.annotation.RestrictTo
+import androidx.annotation.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.content.res.use
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import team.uptech.huddle.Huddle
-import team.uptech.huddle.R
 import team.uptech.huddle.core.BaseBuilder
+import team.uptech.huddle.core.BaseDialog
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
-import team.uptech.huddle.util.RootMarker
-import kotlin.math.min
+import team.uptech.huddle.util.dsl.RootMarker
 import kotlin.math.roundToInt
 
 
@@ -32,25 +31,29 @@ import kotlin.math.roundToInt
  * @see DialogBuilder
  */
 @RootMarker
-inline fun <reified Builder : BaseBuilder> Huddle.create(
-  builder: Builder.() -> Unit
-): Huddle {
+inline fun <reified Dialog : BaseDialog, reified Builder : BaseBuilder> dialog(builder: Builder.() -> Unit): Dialog {
+  val dialog = Dialog::class.java.newInstance()
   val dialogBuilder = Builder::class.java.newInstance()
-  return importSettings(dialogBuilder.apply(builder))
+
+  return dialog.importSettings(dialogBuilder.apply(builder)) as Dialog
 }
 
 /**
- * TODO: add docs
+ * @return true if the dialog is launched, false otherwise.
  */
 fun DialogFragment?.isLaunched() = this?.isResumed == true || this?.dialog?.isShowing == true
 
 /**
- * TODO: add docs
+ * @return true if the dialog is not launched, false otherwise.
  */
 fun DialogFragment?.isNotLaunched() = !isLaunched()
 
 /**
- * TODO: add docs
+ * Launch the dialog from activity
+ *
+ * @param from the [AppCompatActivity's][AppCompatActivity] instance
+ *
+ * @return The [DialogFragment's][DialogFragment] instance
  */
 inline fun <reified T : DialogFragment> T.compose(from: AppCompatActivity): T {
   if (from.isFinishing) return this
@@ -60,7 +63,11 @@ inline fun <reified T : DialogFragment> T.compose(from: AppCompatActivity): T {
 }
 
 /**
- * TODO: add docs
+ * Launch the dialog from fragment
+ *
+ * @param from the [Fragment's][Fragment] instance
+ *
+ * @return The DialogFragment's instance
  */
 inline fun <reified T : DialogFragment> T.compose(from: Fragment): T {
   val activity = from.activity ?: return this
@@ -70,16 +77,9 @@ inline fun <reified T : DialogFragment> T.compose(from: Fragment): T {
   return this
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
-inline fun <reified T : DialogFragment> tryAddDialogToStack(
-  dialog: T,
-  fragmentManager: FragmentManager
-) {
+inline fun <reified T : DialogFragment> tryAddDialogToStack(dialog: T, fragmentManager: FragmentManager) {
   with(fragmentManager) {
     if (!isDestroyed && !isStateSaved) {
       beginTransaction()
@@ -89,30 +89,32 @@ inline fun <reified T : DialogFragment> tryAddDialogToStack(
   }
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 fun Dialog.setWidthRelativeToParent(activity: Activity?, percentage: Int) {
   val screen = activity ?: return
 
-  val defaultDialogWidth = screen.resources.getDimension(R.dimen.dialog_default_width)
-  val dynamicWidth = (percentage / 100.0f * screen.getMinWidthValue())
+  val dynamicWidth = (percentage / 100.0f * screen.getScreenWidth())
 
-  val calculatedDialogWidth = min(defaultDialogWidth, dynamicWidth).roundToInt()
-  window?.setLayout(calculatedDialogWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
+  window?.setGravity(Gravity.CENTER)
+  window?.setLayout(dynamicWidth.roundToInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
 }
 
-/**
- * TODO: add docs
- *
- * @hide
- */
+/** @hide */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 fun Context.getColorIfNotDefault(@ColorRes colorRes: Int, action: (color: Int) -> Unit) {
-  if (colorRes != DEFAULT_COLOR) action.invoke(ContextCompat.getColor(this, colorRes))
+  getColorIfNotDefaultWithFallback(colorRes, action, fallback = {})
+}
+
+/** @hide */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+fun Context.getColorIfNotDefaultWithFallback(
+  @ColorRes colorRes: Int,
+  action: (color: Int) -> Unit,
+  fallback: () -> Unit
+) {
+  if (colorRes != DEFAULT_COLOR) action(ContextCompat.getColor(this, colorRes))
+  else fallback()
 }
 
 /**
@@ -129,4 +131,23 @@ fun Context.getColorIfNotDefault(@ColorRes colorRes: Int, action: (color: Int) -
 fun Context.getThemeColor(@AttrRes colorAttrId: Int): Int {
   return obtainStyledAttributes(intArrayOf(colorAttrId))
     .use { it.getColor(0, Color.WHITE) }
+}
+
+/** @hide */
+@RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+fun Context.getFont(@FontRes fontResId: Int): Typeface? {
+  return try {
+    if (buildVersionGE(Build.VERSION_CODES.O)) {
+      resources.getFont(fontResId)
+    } else {
+      ResourcesCompat.getFont(this, fontResId)
+    }
+  } catch (e: Exception) {
+    val font = Typeface.create("sans-serif", Typeface.NORMAL)
+    when (e) {
+      is Resources.NotFoundException,
+      is NullPointerException -> font
+      else -> font
+    }
+  }
 }

@@ -1,17 +1,31 @@
 package team.uptech.huddle.builder
 
+import androidx.core.content.ContextCompat
+import team.uptech.huddle.R
+import team.uptech.huddle.core.BaseDialog
 import team.uptech.huddle.util.Constants.DEFAULT_COLOR
-import team.uptech.huddle.util.ElementMarker
+import team.uptech.huddle.util.dsl.ElementMarker
 
 
 /**
- * Base DSL Builder for TODO: add docs
+ * The DSL Builder for [BaseDialog]
  *
- * @property titleRes the color resource for the dialog title
- * @property messageRes the color resource for the dialog message
+ * This class is responsible for dialog's content color.
  */
 @ElementMarker
 class ColorBuilder {
-  var titleRes: Int = DEFAULT_COLOR
-  var messageRes: Int = DEFAULT_COLOR
+
+  /**
+   * The color resource for the dialog's title.
+   *
+   * You should pass the resource [R.color] but not a result of the [ContextCompat.getColor]
+   */
+  var title: Int = DEFAULT_COLOR
+
+  /**
+   * The color resource for the dialog's message.
+   *
+   * You should pass the resource [R.color] but not a result of the [ContextCompat.getColor]
+   */
+  var message: Int = DEFAULT_COLOR
 }
