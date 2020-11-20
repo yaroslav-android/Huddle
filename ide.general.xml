@@ -4,6 +4,7 @@
     <entry key="undo.documentUndoLimit" value="600" />
     <entry key="documentation.show.toolbar" value="true" />
     <entry key="ide.mac.allowDarkWindowDecorations" value="true" />
+    <entry key="external.system.auto.import.disabled" value="true" />
   </component>
   <component name="StatusBar">
     <option name="widgets">
