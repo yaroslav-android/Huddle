@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlinx-serialization'
+apply plugin: 'maven-publish'
 apply from: "$rootDir/dependencies.gradle"
 group = 'com.github.yaroslav-android'
 
@@ -14,8 +14,8 @@ android {
         minSdkVersion core.minSdkVersion
         targetSdkVersion core.targetSdkVersion
 
-        versionCode 2
-        versionName "1.0.0-alpha01"
+        versionCode 3
+        versionName "1.0.0-alpha02"
 
         vectorDrawables.useSupportLibrary = true
 
@@ -42,6 +42,16 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
     }
 }
 
