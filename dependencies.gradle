@@ -14,7 +14,6 @@ ext {
     ]
     core = [
             gradleToolsVersion: '4.1.0',
-            mavenPluginVersion: '2.1',
             compileSdkVersion : 29,
             buildToolsVersion : '29.0.3',
             minSdkVersion     : 21,
