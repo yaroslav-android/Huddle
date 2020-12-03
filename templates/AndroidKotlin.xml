@@ -1,12 +1,14 @@
 <templateSet group="AndroidKotlin">
-  <template name="rcsfun" value="fun newInstance($args$): $fragment$ {&#10;    val args = Bundle()&#10;    $addArgs$&#10;    val fragment = $fragment$()&#10;    fragment.arguments = args&#10;    return fragment&#10;}" description="all needed methods for repository cahce/api support" toReformat="true" toShortenFQNames="true">
-    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="fragment" expression="className()" defaultValue="" alwaysStopAt="true" />
-    <variable name="addArgs" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="rcsfuns" value="  override fun $functionName$(cache: Boolean, $parameters$): Single&lt;$returnType$&gt; =&#10;    if (cache) $functionName$FromCache($parameterToPass$).onErrorResumeNext { $functionName$FromApi($parameterToPass$) }&#10;    else $functionName$FromApi($parameterToPass$)&#10;&#10;  private fun $functionName$FromCache($parameters$): Single&lt;$returnType$&gt; =&#10;    dao.get$daoGetFunctionName$($parameterToPass$)&#10;      .map {  }&#10;&#10;  private fun $functionName$FromCacheWithFallback($parameters$, exception: Throwable): Single&lt;$returnType$&gt; =&#10;    $functionName$FromCache($parameterToPass$).onErrorResumeNext { Single.error(exception) }&#10;&#10;  private fun $functionName$FromApi($parameters$): Single&lt;$returnType$&gt; =&#10;    api.get$apiFunctionName$($parameterToPass$)&#10;      .flatMap(ResponseMapper())&#10;      .doOnSuccess { dao.insert$daoInsertFunctionName$($parameterToPass$) }&#10;      .map {  }&#10;      .onErrorResumeNext { $functionName$FromCacheWithFallback($parameterToPass$, it) }" description="all needed methods for repository cahce/api support" toReformat="true" toShortenFQNames="true">
+    <variable name="functionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="parameters" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="returnType" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="parameterToPass" expression="kotlinSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="daoGetFunctionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="apiFunctionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="daoInsertFunctionName" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN_CLASS" value="true" />
-      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
-      <option name="KOTLIN_TOPLEVEL" value="true" />
     </context>
   </template>
 </templateSet>
