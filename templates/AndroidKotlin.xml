@@ -1,0 +1,12 @@
+<templateSet group="AndroidKotlin">
+  <template name="rcsfun" value="fun newInstance($args$): $fragment$ {&#10;    val args = Bundle()&#10;    $addArgs$&#10;    val fragment = $fragment$()&#10;    fragment.arguments = args&#10;    return fragment&#10;}" description="all needed methods for repository cahce/api support" toReformat="true" toShortenFQNames="true">
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fragment" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="addArgs" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>
