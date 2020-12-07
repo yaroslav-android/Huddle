@@ -6,6 +6,7 @@
     <keyboard-shortcut first-keystroke="meta 3" />
   </action>
   <action id="ActivateFindToolWindow" />
+  <action id="ActivateServicesToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="alt f12" />
     <keyboard-shortcut first-keystroke="meta 8" />
