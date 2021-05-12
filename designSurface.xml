@@ -1,0 +1,13 @@
+<application>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="native-application/src/main/res/layout/account_banking_product_list_row.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/fragment_product_summary.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/item_transaction.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/recent_transactions_view_layout.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/transaction_bottom_sheet.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+</application>
