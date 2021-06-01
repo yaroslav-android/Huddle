@@ -7,6 +7,7 @@
         <entry key="native-application/src/main/res/layout/account_application_submitted.xml" value="0.31296296296296294" />
         <entry key="native-application/src/main/res/layout/account_banking_product_list_row.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/account_credit_application.xml" value="0.335" />
+        <entry key="native-application/src/main/res/layout/account_get_digital_card.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/account_product_list_row.xml" value="0.31296296296296294" />
         <entry key="native-application/src/main/res/layout/activity_bank_accounts.xml" value="0.4005208333333333" />
         <entry key="native-application/src/main/res/layout/activity_login.xml" value="0.2101851851851852" />
@@ -18,6 +19,7 @@
         <entry key="native-application/src/main/res/layout/fragment_manual_bank_account_link.xml" value="0.2101851851851852" />
         <entry key="native-application/src/main/res/layout/fragment_product_summary.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/fragment_settings.xml" value="0.22592592592592592" />
+        <entry key="native-application/src/main/res/layout/item_account_credit_application_offer.xml" value="0.25" />
         <entry key="native-application/src/main/res/layout/item_transaction.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/recent_transactions_view_layout.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/transaction_bottom_sheet.xml" value="0.1" />
