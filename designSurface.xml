@@ -3,6 +3,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="native-application/src/main/res/drawable/ic_credit_card.xml" value="0.24259259259259258" />
         <entry key="native-application/src/main/res/drawable/ic_settings_debit_card_management.xml" value="0.25092592592592594" />
         <entry key="native-application/src/main/res/layout/account_application_submitted.xml" value="0.31296296296296294" />
         <entry key="native-application/src/main/res/layout/account_banking_product_list_row.xml" value="0.1" />
