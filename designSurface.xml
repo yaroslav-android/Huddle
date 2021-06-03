@@ -7,12 +7,17 @@
         <entry key="native-application/src/main/res/drawable/ic_settings_debit_card_management.xml" value="0.25092592592592594" />
         <entry key="native-application/src/main/res/layout/account_application_submitted.xml" value="0.31296296296296294" />
         <entry key="native-application/src/main/res/layout/account_banking_product_list_row.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/account_cached_balance.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/account_credit_application.xml" value="0.335" />
+        <entry key="native-application/src/main/res/layout/account_credit_list_row.xml" value="0.3943589743589744" />
+        <entry key="native-application/src/main/res/layout/account_debit_card_tracker.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/account_get_digital_card.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/account_product_list_row.xml" value="0.31296296296296294" />
+        <entry key="native-application/src/main/res/layout/account_start_investing.xml" value="0.19537037037037036" />
         <entry key="native-application/src/main/res/layout/activity_bank_accounts.xml" value="0.4005208333333333" />
         <entry key="native-application/src/main/res/layout/activity_login.xml" value="0.2101851851851852" />
         <entry key="native-application/src/main/res/layout/activity_unfinished_applications.xml" value="0.25" />
+        <entry key="native-application/src/main/res/layout/announcement_layout.xml" value="0.19537037037037036" />
         <entry key="native-application/src/main/res/layout/fragment_card_management.xml" value="0.20555555555555555" />
         <entry key="native-application/src/main/res/layout/fragment_credit_summary.xml" value="0.20555555555555555" />
         <entry key="native-application/src/main/res/layout/fragment_introduction_plant_your_change_for_all.xml" value="0.37407407407407406" />
@@ -20,10 +25,13 @@
         <entry key="native-application/src/main/res/layout/fragment_manual_bank_account_link.xml" value="0.2101851851851852" />
         <entry key="native-application/src/main/res/layout/fragment_product_summary.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/fragment_settings.xml" value="0.22592592592592592" />
+        <entry key="native-application/src/main/res/layout/fund_your_account_tile.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/item_account_credit_application_offer.xml" value="0.25" />
         <entry key="native-application/src/main/res/layout/item_transaction.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/link_account_dashboard_tile.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/recent_transactions_view_layout.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/transaction_bottom_sheet.xml" value="0.1" />
+        <entry key="native-application/src/main/res/layout/transfer_funds_dashboard_tile.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/view_manage.xml" value="0.19722222222222222" />
       </map>
     </option>
