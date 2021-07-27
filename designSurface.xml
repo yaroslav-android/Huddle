@@ -38,6 +38,7 @@
         <entry key="native-application/src/main/res/layout/fragment_plant_your_change_preferences.xml" value="0.2" />
         <entry key="native-application/src/main/res/layout/fragment_product_summary.xml" value="0.1" />
         <entry key="native-application/src/main/res/layout/fragment_settings.xml" value="0.22592592592592592" />
+        <entry key="native-application/src/main/res/layout/fragment_welcome_screen_tree.xml" value="0.22037037037037038" />
         <entry key="native-application/src/main/res/layout/fund_your_account_tile.xml" value="0.20185185185185187" />
         <entry key="native-application/src/main/res/layout/item_account_credit_application_offer.xml" value="0.25" />
         <entry key="native-application/src/main/res/layout/item_transaction.xml" value="0.1" />
